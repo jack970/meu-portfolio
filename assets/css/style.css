@@ -190,24 +190,20 @@ form button {
     margin-top: 90px;
 }
 
-.logo_socials_soc svg {
+.logo_socials_soc img {
     margin-left: 8px;
     margin-right: 8px;
     cursor: pointer;
-}
-
-.logo_socials_soc svg path {
     transition: all 0.3s;
 }
 
-.logo_socials_soc svg:hover path {
-    fill: #242d52;
+.logo_socials_soc img:hover {
+    opacity: .5;
 }
 
 .responsive-iframe {
     width: 30rem;
     height: 25rem;
-    margin-top: -2rem;
 }
 
 @media only screen and (max-width: 900px) {
@@ -320,10 +316,11 @@ form button {
     font-weight: 900;
 }
 
-.html {width: 92%; background-color: #04AA6D;}
+.html {width: 92%; background-color: #F06529;}
 .css {width: 84%; background-color: #2196F3;}
 .js {width: 65%; background-color: #F7DF1E;}
-.php {width: 60%; background-color: #808080;}
+.python {width: 70%; background-color: #3775A9;}
+.dart {width: 30%; background-color: #4A4EEC;}
 
 @media only screen and (max-width: 900px) {
     .skills-content {
@@ -478,16 +475,14 @@ footer {
     margin-top: 30px;
 }
 
-.logo-socials-soc svg {
+.logo-socials-soc img {
+    filter: invert(100%) sepia(6%) saturate(7461%) hue-rotate(193deg) brightness(110%) contrast(104%);
     margin: 0 auto;
     cursor: pointer;
-}
-
-.logo-socials-soc svg path {
     transition: all .3s;
-    fill: #fff;
+    margin-right: 1rem;
 }
 
-.logo-socials-soc svg:hover path {
-    fill: #242d52;
+.logo-socials-soc img:hover {
+    filter: invert(13%) sepia(48%) saturate(1020%) hue-rotate(194deg) brightness(97%) contrast(89%);
 }

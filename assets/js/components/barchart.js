@@ -2,7 +2,9 @@ const barchart = () => {
     const skillsInfo = [
         {code: 'html', name: 'HTML', value: '90', style: '200ms'},
         {code: 'css', name: 'CSS', value: '84', style: '300ms'},
-        {code: 'js', name: 'Javascript', value: '65', style: '400ms'}
+        {code: 'js', name: 'Javascript', value: '65', style: '400ms'},
+        {code: 'python', name: 'Python', value: '70', style: '500ms'},
+        {code: 'dart', name: 'Dart', value: '30', style: '600ms'}
     ]
     
     const data = skillsInfo.map(skill => {
