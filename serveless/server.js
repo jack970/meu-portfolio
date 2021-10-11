@@ -10,7 +10,7 @@ exports.handler = async function(e, context, callback) {
     }
 
     const transport = {
-        host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
+        host: 'smtp-mail.outlook.com', // Don’t forget to replace with the SMTP host of your provider
         port: 587,
         auth: {
         user: process.env.USER,
@@ -27,12 +27,12 @@ exports.handler = async function(e, context, callback) {
     const message = params.message
 
     const content = `<h1>Nome do Recrutador: <b>${nome}</b></h1>
-                <h1>Telefone: <b>${telefone}</b></h1><br/>
-                <h1>Email: <b>${email}</b> </h1> <br/>
-                <h1>Mensagem: <b>${message}</b> </h1><br/>`
+                    <h1>Telefone: <b>${telefone}</b></h1>
+                    <h1>Email: <b>${email}</b> </h1>
+                    <h1>Mensagem: <b>${message}</b> </h1>`
     const mail = {
         from: process.env.USER,
-        to: 'italogabrielcod@gmail.com',  // Change to email address that you want to receive messages on
+        to: process.env.SUBJECT,  // Change to email address that you want to receive messages on
         subject: `Mensagem do Portfolio: ${nome}`,
         html: content
     }
