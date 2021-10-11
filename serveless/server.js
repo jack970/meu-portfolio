@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer")
 require("dotenv").config()
 
 exports.handler = async function(e, context, callback) {
-    console.log('teste')
     if (e.httpMethod !== "POST") {
         return { 
             statusCode: 405, 
@@ -11,7 +10,7 @@ exports.handler = async function(e, context, callback) {
     }
 
     const transport = {
-        host: 'smtp-mail.outlook.com', // Don’t forget to replace with the SMTP host of your provider
+        host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
         port: 587,
         auth: {
         user: process.env.USER,
@@ -21,19 +20,21 @@ exports.handler = async function(e, context, callback) {
   
     const transporter = nodemailer.createTransport(transport)
     const params = JSON.parse(e.body);
-
+    
     const nome = params.name
     const email = params.email
+    const telefone = params.telefone
     const message = params.message
 
-    const content = `Nome do Cliente: ${nome}
-                \nEmail: ${email}
-                \nMensagem: ${message}`
+    const content = `<h1>Nome do Recrutador: <b>${nome}</b></h1>
+                <h1>Telefone: <b>${telefone}</b></h1><br/>
+                <h1>Email: <b>${email}</b> </h1> <br/>
+                <h1>Mensagem: <b>${message}</b> </h1><br/>`
     const mail = {
-        from: 'italocod@hotmail.com',
-        to: 'italocod@hotmail.com',  // Change to email address that you want to receive messages on
+        from: process.env.USER,
+        to: 'italogabrielcod@gmail.com',  // Change to email address that you want to receive messages on
         subject: `Mensagem do Portfolio: ${nome}`,
-        text: content
+        html: content
     }
 
     return transporter.sendMail(mail)
