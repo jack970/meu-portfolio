@@ -1,4 +1,5 @@
 import barchart from './components/barchart.js'
+import ModalAlert from './components/modalAlert.js';
 import { mask, mphone } from './maksPhone.js';
 
 // Animação wow zoomIn
@@ -18,7 +19,6 @@ const name = document.querySelector('.fullname')
 const telefone = document.querySelector('.telefone')
 const email = document.querySelector('.email')
 const message = document.querySelector('.message')
-
 // Ativa estilos do header quando scrollTop > 50
 window.onscroll = () => {onScrollStyle()}
 const onScrollStyle = () => {
@@ -49,10 +49,17 @@ const RealizaRequisicao = async (formData) => {
             'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
-        })  
-        .then(response => console.log(response.json()))
-        .catch(erro => console.log(erro))
-    alert("Mensagem Enviada")
+        }) 
+        .then(response => {
+            return response.json()
+        })
+        .then(response =>{
+            ModalAlert("info")
+            })
+        .catch(erro => {
+            ModalAlert("danger")
+            console.log(erro)
+        })
 }
 
 // Controle de formulário

@@ -37,9 +37,12 @@ exports.handler = async function(e, context, callback) {
         html: content
     }
 
-    return transporter.sendMail(mail)
-    .then(() => {
-        callback(null, { statusCode: 200, body: "Success" });
-    })
-    .catch(e => callback(e, { statusCode: 500, body: "Error sending email" }))
+    try {
+        let info = await transporter.sendMail(mail)
+        // Log the result
+        callback(null, { statusCode: 200, body: JSON.stringify(info) });
+    } catch(error) {
+        callback(error)
+    }
+    
 }
