@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-console.log(process.env.SUBJECT);
 exports.handler = async function (e, context, callback) {
   if (e.httpMethod !== "POST") {
     return {
