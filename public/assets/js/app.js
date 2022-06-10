@@ -82,3 +82,13 @@ contactForm.addEventListener("submit", (e) => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {barchart()})
+// --------------------
+
+const botaoTopo = document.querySelector(".botao-voltar-topo")
+function scrollTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+}
+botaoTopo.addEventListener("click", scrollTop)
