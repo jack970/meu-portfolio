@@ -12,13 +12,6 @@ const wow = new WOW({
   });
   wow.init(); // starta animação
 
-const hamburguer = document.querySelector(".hamburguer")
-const contactForm = document.querySelector(".contact-form")
-
-const name = document.querySelector('.fullname')
-const telefone = document.querySelector('.telefone')
-const email = document.querySelector('.email')
-const message = document.querySelector('.message')
 // Ativa estilos do header quando scrollTop > 50
 window.onscroll = () => {onScrollStyle()}
 const onScrollStyle = () => {
@@ -28,17 +21,22 @@ const onScrollStyle = () => {
          document.getElementById("home").className = ""
     }
 }
+// --------------------
 
 // Ativa Mascara Telefone
+const telefone = document.querySelector('.telefone')
 telefone.addEventListener('keyup', (e) => {
     mask(e.target, mphone)
 })
+// --------------------
 
 // Ativa o menu Hamburguer, caso for clicado
+const hamburguer = document.querySelector(".hamburguer")
 hamburguer.addEventListener("click", (e) => {
     e.preventDefault();
     document.querySelector(".navigation").classList.toggle("active");
 })
+// --------------------
 
 // Envia no Método Post para o Server
 const RealizaRequisicao = async (formData) => {
@@ -61,8 +59,14 @@ const RealizaRequisicao = async (formData) => {
             console.log(erro)
         })
 }
+// --------------------
 
 // Controle de formulário
+const contactForm = document.querySelector(".contact-form")
+const name = document.querySelector('.fullname')
+const email = document.querySelector('.email')
+const message = document.querySelector('.message')
+
 contactForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
@@ -80,7 +84,6 @@ contactForm.addEventListener("submit", (e) => {
         alert("Preencha o campo Telefone")
     }
 })
-
 document.addEventListener("DOMContentLoaded", () => {barchart()})
 // --------------------
 
