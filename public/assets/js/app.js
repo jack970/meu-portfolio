@@ -2,6 +2,7 @@ import barchart from './components/barchart.js'
 import LoadingInBotaoEnviar from './components/loading.js';
 import ModalAlert from './components/modalAlert.js';
 import { mask, mphone } from './maksPhone.js';
+import carouselDigitacao from './typing.js';
 
 // Animação wow zoomIn
 const wow = new WOW({
@@ -94,3 +95,14 @@ function scrollTop() {
     })
 }
 botaoTopo.addEventListener("click", scrollTop)
+// --------------------
+
+// Efeito de digitação no texto
+const carouselList = [
+    {text: "Web", color: "#242D52"},
+    {text: "Mobile", color: "#242D52"},
+    {text: "Desktop", color: "#242D52"},
+    {text: "Backend", color: "#242D52"}
+]
+const eleRef = document.querySelector("#sentence")
+carouselDigitacao(carouselList, eleRef)
