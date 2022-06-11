@@ -1,4 +1,5 @@
 import barchart from './components/barchart.js'
+import LoadingInBotaoEnviar from './components/loading.js';
 import ModalAlert from './components/modalAlert.js';
 import { mask, mphone } from './maksPhone.js';
 
@@ -67,7 +68,7 @@ const name = document.querySelector('.fullname')
 const email = document.querySelector('.email')
 const message = document.querySelector('.message')
 
-contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", async (e) => {
     e.preventDefault()
 
     const formData = {
@@ -76,13 +77,11 @@ contactForm.addEventListener("submit", (e) => {
         email: email.value,
         message: message.value
     }
-    const isTelefone = telefone.value.length
-    if (isTelefone === 15) {
-        RealizaRequisicao(formData)
-        document.getElementById('form').reset() // Apaga Formulário
-    }else {
-        alert("Preencha o campo Telefone")
-    }
+    LoadingInBotaoEnviar(true)
+    await RealizaRequisicao(formData)
+    LoadingInBotaoEnviar(false) 
+    document.getElementById('form').reset() // Apaga Formulário
+    
 })
 document.addEventListener("DOMContentLoaded", () => {barchart()})
 // --------------------
