@@ -158,6 +158,7 @@ h1, span {
 
 .header_main_content_h1 {
     font-size: 3rem;
+    min-width: 35rem;
     color: #242d52;
 }
 
@@ -223,6 +224,7 @@ form button {
     .header_main_content_h1 {
         font-size: 2rem;
         word-wrap: break-word;
+        min-width: unset;
     }
 
     .logo_socials_soc {
