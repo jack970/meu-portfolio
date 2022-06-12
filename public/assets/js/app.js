@@ -106,3 +106,7 @@ const carouselList = [
 ]
 const eleRef = document.querySelector("#sentence")
 carouselDigitacao(carouselList, eleRef)
+
+// ano atual no footer
+const ano = new Date().getFullYear()
+document.querySelector("#ano-atual").innerHTML = `&copy; ${ano}`
