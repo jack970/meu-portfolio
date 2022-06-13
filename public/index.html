@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="modal-app"></div>
-    <header class="wow zoomIn" id="home">
+    <header class="wow fadeIn" data-wow-delay=".1s" id="home">
         <div class="header-content">
             <div class="logo">
                 <h1>Ítalo</h1>
@@ -121,55 +121,57 @@
             </a>
         </div>
     </div>
-    <div class="contact-heading wow zoomIn">
-        <h1>CONTATO</h1>
-    </div>
-    <div 
-        class="container wow zoomIn"
-        style="animation-delay: 300ms;"
-        id="contact">
-        <form class="contact-form" id="form">
-            <div class="form-field">
-                <label for="fullname">Nome:</label>
-                <input 
-                    type="text"
-                    class="fullname"
-                    placeholder="Nome"
-                    required
-                />
-            </div>
-            <div class="form-field">
-                <label for="email">Email</label>
-                <input 
-                    type="text"
-                    class="email"
-                    placeholder="Email"
-                    required
-                />
-            </div>
-            <div class="form-field">
-                <label for="email">Telefone</label>
-                <input 
-                    type="text"
-                    class="telefone"
-                    placeholder="(12) 34567-8901"
-                    required
-                />
-            </div>
-            <div class="form-field">
-                <label for="message">Mensagem:</label>
-                <textarea
-                    type="message"
-                    class="message"
-                    placeholder="Me Manda uma mensagem aqui..."
-                    required
-                    rows='4'
-                ></textarea>
-            </div>
-            <div class="form-field btn">
-                <input type="submit" name="submit" class="submit" value="Enviar">
-            </div>
-        </form>
+    <div id="contact">
+        <div class="contact-heading wow zoomIn">
+            <h1>CONTATO</h1>
+        </div>
+        <div 
+            class="container wow zoomIn"
+            style="animation-delay: 300ms;"
+            id="contact">
+            <form class="contact-form" id="form">
+                <div class="form-field">
+                    <label for="fullname">Nome:</label>
+                    <input 
+                        type="text"
+                        class="fullname"
+                        placeholder="Nome"
+                        required
+                    />
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input 
+                        type="text"
+                        class="email"
+                        placeholder="Email"
+                        required
+                    />
+                </div>
+                <div class="form-field">
+                    <label for="email">Telefone</label>
+                    <input 
+                        type="text"
+                        class="telefone"
+                        placeholder="(12) 34567-8901"
+                        required
+                    />
+                </div>
+                <div class="form-field">
+                    <label for="message">Mensagem:</label>
+                    <textarea
+                        type="message"
+                        class="message"
+                        placeholder="Me Manda uma mensagem aqui..."
+                        required
+                        rows='4'
+                    ></textarea>
+                </div>
+                <div class="form-field btn">
+                    <input type="submit" name="submit" class="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
         <div class="logo-socials">
