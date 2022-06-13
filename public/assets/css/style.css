@@ -22,14 +22,27 @@ body {
 }
 
 header {
-    display: flex;
     z-index: 99;
+    display: flex;
     justify-content: space-around;
-    align-items: center;
     position: fixed;
-    overflow-y: hidden;
+    align-items: center;
     width: 100%;
-    padding: 1rem 0;
+    background-color: white;
+    border-bottom: 2px solid #4169e1;
+}
+
+.header-content {
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 66rem;
+    width: 100%;
+}
+
+header + .main-header  {
+    padding-top: 10rem; 
 }
 
 h1, span {
@@ -64,11 +77,6 @@ h1, span {
     opacity: 0.5;
 }
 
-.sticky {
-    background-color: #fff;
-    border-bottom: 1px solid #4169e1;
-}
-
 .navigation.active {
     left: 0;
 }
@@ -86,11 +94,7 @@ h1, span {
 }
 
 @media only screen and (max-width: 900px) {
-
     header {
-        padding: 0 2rem;
-        width: unset;
-        position: unset;
         justify-content: space-between;
     }
 
@@ -99,11 +103,11 @@ h1, span {
     }
 
     .navigation {
-        position: absolute;
+        position: fixed;
         top: 4.5rem;
         left: -100%;
         width: 100%;
-        height: 55%;
+        height: 100%;
         background-color: #4169e1;
     }
 
@@ -122,6 +126,7 @@ h1, span {
     .navigation ul li a{
         font-size: 29px;
         margin-bottom: 1rem;
+        margin-right: 0;
         display: block;
         color: #fff;
     }
@@ -139,6 +144,10 @@ h1, span {
     .typing-container {
         justify-content: center;
     }
+
+    header + .main-header  {
+        padding-top: 7rem; 
+    }
 }
 
 /* Seção termina aqui */
@@ -151,11 +160,6 @@ h1, span {
     justify-content: center;
 }
 
-.main-header {
-    margin-top: 150px;
-
-}
-
 .header_main_content_h1 {
     font-size: 3rem;
     min-width: 35rem;
@@ -166,7 +170,7 @@ h1, span {
     color: #4169e1;
 }
 
-.header-content button,
+.apresentacao-content button,
 form button {
     padding: 12px 35px;
     background-color: #4169e1;
@@ -563,7 +567,7 @@ footer {
     bottom: 5rem;
     height: 4rem;
     width: 4rem;
-    background-color: #4169e1;
+    background-color: #00135f;;
     appearance: none;
     border: none;
     border-radius: 50%;
@@ -627,7 +631,7 @@ footer {
     display: inline-block;
     width: 2px;
     height: 50px;
-    background-color: #4169e1;
+    background-color: #242D52;
 }
 
 @keyframes blink {

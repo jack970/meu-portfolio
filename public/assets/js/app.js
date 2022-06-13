@@ -14,15 +14,6 @@ const wow = new WOW({
   });
   wow.init(); // starta animação
 
-// Ativa estilos do header quando scrollTop > 50
-window.onscroll = () => {onScrollStyle()}
-const onScrollStyle = () => {
-    if(document.body.scrollTop > 50 | document.documentElement.scrollTop > 50) {
-        document.getElementById("home").className = "sticky"
-    } else{
-         document.getElementById("home").className = ""
-    }
-}
 // --------------------
 
 // Ativa Mascara Telefone
